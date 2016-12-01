@@ -43,23 +43,26 @@ jQuery.fn.fadeSlideShow = function(options) {
 			allowKeyboardCtrl: true, // allow keyboard controlls left / right / space
 			autoplay: true, // autoplay the slideshow
 			beforeSlide: function(){}, // function to call before going to the next slide
-			afterSlide: function(){} // function to call after going to the next slide
+			afterSlide: function(){}, // function to call after going to the next slide
+			noCSS: false // don't add CSS to slider (you need to manually add the correct style!)
 	 	}, options);
 
-		// set style for wrapper element
-		jQuery(this).css({
-			width: settings.width,
-			height: settings.height,
-			position: 'relative',
-			overflow: 'hidden'
-		});
+		if (!settings.noCSS) {
+			// set style for wrapper element
+			jQuery(this).css({
+				width: settings.width,
+				height: settings.height,
+				position: 'relative',
+				overflow: 'hidden'
+			});
 
-		// set styles for child element
-		jQuery('> *',this).css({
-			position: 'absolute',
-			width: settings.width,
-			height: settings.height
-		});
+			// set styles for child element
+			jQuery('> *',this).css({
+				position: 'absolute',
+				width: settings.width,
+				height: settings.height
+			});
+		}
 
 		// count number of slides
 		var Slides = jQuery('> *', this).length;
