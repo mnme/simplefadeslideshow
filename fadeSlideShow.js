@@ -147,7 +147,7 @@ jQuery.fn.fadeSlideShow = function(options) {
 			var i=0;
 			var li = '';
 			while(i<=Slides){
-				if(i==0){
+				if(i===0){
 					li = li+'<li class="'+settings.ListLi+i+' '+settings.ListLiActive+'"><a href="#">'+(i+1)+'<\/a><\/li>';
 				}else{
 					li = li+'<li class="'+settings.ListLi+i+'"><a href="#">'+(i+1)+'<\/a><\/li>';
