@@ -45,7 +45,7 @@ jQuery.fn.fadeSlideShow = function(options) {
 			beforeSlide: function(){}, // function to call before going to the next slide
 			afterSlide: function(){}, // function to call after going to the next slide
 			noCSS: false // don't add CSS to slider (you need to manually add the correct style!)
-	 	}, options);
+		}, options);
 
 		if (!settings.noCSS) {
 			// set style for wrapper element
