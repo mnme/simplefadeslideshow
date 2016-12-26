@@ -90,7 +90,7 @@ jQuery.fn.fadeSlideShow = function(options) {
 				}
 
 				if(ActSlide <= 0){
-					jQslide.fadeIn(settings.speed);
+					jQslide.velocity("fadeIn", {duration: settings.speed});
 					ActSlide = Slides;
 				}else{
 					ActSlide = ActSlide - 1;
