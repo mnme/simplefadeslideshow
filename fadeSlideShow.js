@@ -164,7 +164,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     $(this).after(List);
                 }
 
-                $('#'+settings.ListElement+' a').bind('click', function(){
+                $('#'+settings.ListElement+' a').on('click', function(){
                     var index = $('#'+settings.ListElement+' a').index(this);
                     stopAutoplay();
                     var ReverseIndex = Slides-index;
@@ -186,7 +186,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     $('#'+settings.PlayPauseElement).html(settings.PlayText);
                 }
 
-                $('#'+settings.PlayPauseElement).bind('click', function(){
+                $('#'+settings.PlayPauseElement).on('click', function(){
                     if(intval){
                         stopAutoplay();
                     }else{
@@ -201,7 +201,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     $(this).after('<a href="#" id="'+settings.NextElement+'">'+settings.NextElementText+'<\/a>');
                 }
 
-                $('#'+settings.NextElement).bind('click', function(){
+                $('#'+settings.NextElement).on('click', function(){
                     nextSlide = ActSlide-1;
                     stopAutoplay();
                     jumpTo(nextSlide);
@@ -214,7 +214,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     $(this).after('<a href="#" id="'+settings.PrevElement+'">'+settings.PrevElementText+'<\/a>');
                 }
 
-                $('#'+settings.PrevElement).bind('click', function(){
+                $('#'+settings.PrevElement).on('click', function(){
                     prevSlide = ActSlide+1;
                     stopAutoplay();
                     jumpTo(prevSlide);
@@ -223,7 +223,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             }
 
             if(settings.allowKeyboardCtrl){
-                $(document).bind('keydown', function(e){
+                $(document).on('keydown', function(e){
                     if(e.which==39){
                         var nextSlide = ActSlide-1;
                         stopAutoplay();
