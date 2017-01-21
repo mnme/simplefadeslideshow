@@ -80,7 +80,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             var autoplay = function(){
                 intval = setInterval(function(){
                     settings.beforeSlide();
-                    jQslide.eq(ActSlide).fadeOut(settings.speed);
+                    jQslide.eq(ActSlide).velocity("fadeOut", {duration: settings.speed});
 
                     // if list is on change the active class
                     if(settings.ListElement){
